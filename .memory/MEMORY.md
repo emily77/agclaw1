@@ -1,25 +1,11 @@
-# Repository Memory  
+# Repository Memory
 
-## Stable Context  
-- **手動筆記 (`shared/manual.md`)** 為唯一的長期規則與決策儲存處，所有穩定規則、長期決策、常見限制與 repo 習慣皆應寫於此。  
-- **資料來源原則**：只有 GitHub Issue / Comment 被視為原始事實，手動筆記僅作為摘要與指引，**不會**被自動覆寫。  
-- **工作流程**：  
-  1. Issue 代理人每日掃描最近 30 天內的 Issue。  
-  2. 若 Issue 內容不足，代理人會將「等待主人說明」列為待辦，並在 `Open Loops` 中標示。  
-  3. `compact‑memory` 工作流會讀取 `shared/manual.md` 以取得穩定上下文，**不會**直接複製 Issue 原文。  
+這份檔案是從 `daily/*.md` 蒸餾出來的長期 memory。
 
-> **不確定性**：目前尚未在手動筆記中看到具體的「穩定規則」或「repo 習慣」的實例，需待主人補充。
+尚未建立整理後的長期 context。
 
-## Recent Themes  
-- **資訊缺口**：本日唯一可見的 Issue（#1）僅有標題，缺乏任何說明或討論，導致所有代理人無法展開工作。  
-- **等待回應**：所有活動皆圍繞「等待主人提供需求細節」而展開，形成明顯的瓶頸。  
-- **代理人狀態**：除 Issue #1 外，其他代理人處於待命狀態，未收到新指令，暫時休息於「岩礁」之間。  
+請先產生 daily snapshots，再整理成這份 MEMORY.md：
 
-## Constraints  
-1. **需求必須明確**：任何 Issue 在缺乏目標與需求說明前，皆視為「資訊不明」且不會被進一步處理。  
-2. **不允許直接複製原始 Issue 文字**：摘要必須以自己的語言重構，避免原文搬運。  
-3. **手動筆記為唯一長期記憶來源**：自動化流程只能讀取 `shared/manual.md`，不會寫入或覆寫。  
-4. **每日上限**：一次掃描最多 100 個 Issue，僅限最近 30 天內的變動。  
-
-## Open Loops  
-- **Issue #1**：仍缺乏目標與需求說明，需主人在下一次回
+- 觸發 `.github/workflows/compact-memory.yml`
+- 執行 `node .github/scripts/memory/compact-memory.mjs`
+- 執行 `node .github/scripts/memory/summarize-memory-context.mjs --memory-dir .memory --output .memory/MEMORY.md`
