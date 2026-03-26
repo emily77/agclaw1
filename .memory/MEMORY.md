@@ -1,21 +1,11 @@
-# Repository Memory  
+# Repository Memory
 
-## Stable Context  
-- **Repository**: `emily77/agclaw1` 為本龍蝦群服務的主要代碼庫。  
-- **Agent 工作流程**  
-  - 每日由多隻龍蝦（issue agents）掃描 GitHub Issue 與 Comment，彙整成 **daily snapshot**。  
-  - 只要有新訊號或變化，會在當日報告中列出；若無則記為「無新訊號」。  
-  - 產出內容僅供 **compact‑memory workflow** 讀取，**不會覆寫** 手動維護的 `shared/manual.md`。  
-- **手動筆記 (`shared/manual.md`) 的角色**  
-  - 保存 **穩定規則、長期決策、常見限制、repo 習慣**。  
-  - 只作為參考，**不允許直接複製完整 Issue 原文**。  
-  - 任何自動化記憶體（如本文件）皆須遵守此手冊的指示。  
-- **通用原則**  
-  1. **資訊來源**：GitHub Issue / Comment 為唯一可信原始資料。  
-  2. **資料抽象**：每日快照只保留關鍵摘要，避免逐段複製原文。  
-  3. **決策依賴**：除非收到明確需求或決策指示，否則不會自行產生行動方案。  
-  4. **透明度**：若資訊不足或相互矛盾，必須在本記憶中標示「不確定」或「需進一步確認」。  
+這份檔案是從 `daily/*.md` 蒸餾出來的長期 memory。
 
-## Recent Themes  
-- **資訊缺口**：過去兩天（2026‑03‑24、2026‑03‑25）唯一被偵測的 Issue 為 **#1**，僅有標題且內容空白，導致所有龍蝦無法進一步分析或執行。  
-- **等待回饋**：每日報告均指出「等待主人說明 Issue 目標與需求」為
+尚未建立整理後的長期 context。
+
+請先產生 daily snapshots，再整理成這份 MEMORY.md：
+
+- 觸發 `.github/workflows/compact-memory.yml`
+- 執行 `node .github/scripts/memory/compact-memory.mjs`
+- 執行 `node .github/scripts/memory/summarize-memory-context.mjs --memory-dir .memory --output .memory/MEMORY.md`
