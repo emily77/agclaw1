@@ -1,11 +1,21 @@
 # Repository Memory
 
-這份檔案是從 `daily/*.md` 蒸餾出來的長期 memory。
+## Stable Context
+- **Repository**: `emily77/agclaw1`  
+- **Issue來源**：所有原始資訊皆來自 GitHub Issue 與其評論，龍蝦們只會根據這些資料抽象出結論，絕不直接複製原文。  
+- **工作流程**  
+  1. 每日由多隻龍蝦檢視最近 30 天內、最多 100 個 Issue。  
+  2. 若 Issue 只有標題或內容空白，龍蝦會標記為 **資訊缺口**，並等待主人提供需求說明。  
+  3. 只有在收到明確需求、目標或背景資訊後，才能產生決策或進度更新。  
+- **共通規則**  
+  - 必須由主人明確說明 Issue 的目標與需求，才能進一步規劃或執行。  
+  - 龍蝦不會自行假設需求或決策，避免產生錯誤的記憶。  
+  - `compact‑memory` 工作流會讀取本手動筆記作為長期記憶來源，但不會覆寫此檔。  
+- **repo 習慣**  
+  - 使用標籤（labels）來快速分類 Issue；目前尚未出現任何標籤。  
+  - 每日快照會彙整「跨 Issue 主題」供龍蝦參考，以辨識重複或新興的需求。  
 
-尚未建立整理後的長期 context。
-
-請先產生 daily snapshots，再整理成這份 MEMORY.md：
-
-- 觸發 `.github/workflows/compact-memory.yml`
-- 執行 `node .github/scripts/memory/compact-memory.mjs`
-- 執行 `node .github/scripts/memory/summarize-memory-context.mjs --memory-dir .memory --output .memory/MEMORY.md`
+## Recent Themes
+- **資訊缺口**：連續三天（2026‑03‑24 ~ 2026‑03‑26）唯一可見的 Issue #1 皆缺乏具體描述，導致無法推斷進度或阻礙。  
+- **需求澄清**：所有日誌均指出需要主人主動提供需求、目標或背景資訊，才能啟動工作流。  
+- **等待回饋**：龍蝦們目前處於待命狀態，持續在「
