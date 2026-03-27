@@ -1,11 +1,23 @@
 # Repository Memory
 
-這份檔案是從 `daily/*.md` 蒸餾出來的長期 memory。
+## Stable Context
+- **龍蝦工作原則**  
+  - 只以 GitHub Issue / Comment 為原始資料來源，**不**直接複製 Issue 內容。  
+  - 任何手動維護的長期記憶（`shared/manual.md`）僅供參考，**不會被覆寫**。  
+  - 每日快照由多隻龍蝦（🦞）自動蒐集，若資訊不足則標記為「資訊不明」並請主人補充。  
 
-尚未建立整理後的長期 context。
+- **Issue 處理流程**  
+  1. **需求說明**：每個 Issue 必須至少包含 **目標、預期成果** 以及 **背景說明**。  
+  2. **指派與標籤**：建立負責人（Assignee）與適當的標籤（Label）是推進的前置條件。  
+  3. **決策產出**：只有在需求完整、指派明確後，龍蝦才會記錄決策與里程碑。  
 
-請先產生 daily snapshots，再整理成這份 MEMORY.md：
+- **資料保留範圍**  
+  - 快照僅保留最近 30 天、最多 100 個 Issue。  
+  - 超過此範圍的資訊會被自動捨棄，除非手動搬入 `shared/manual.md`。  
 
-- 觸發 `.github/workflows/compact-memory.yml`
-- 執行 `node .github/scripts/memory/compact-memory.mjs`
-- 執行 `node .github/scripts/memory/summarize-memory-context.mjs --memory-dir .memory --output .memory/MEMORY.md`
+## Recent Themes
+- **資訊缺口**：過去四天（2026‑03‑24 ~ 2026‑03‑27）唯一出現的 Issue #1 均只有標題，缺乏描述、需求與指派資訊。  
+- **等待回饋**：所有龍蝦的行動都圍繞「等待主人提供細節」展開，未形成任何跨 Issue 的關聯或決策。  
+- **潛在流程需求**  
+  - **需求說明缺失**：若未來出現多個缺少說明的 Issue，需統一收集需求文件。  
+  - **指派與標籤規範**：若多個 Issue 同時缺少負責人或標
