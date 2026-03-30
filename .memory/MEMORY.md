@@ -1,11 +1,19 @@
-# Repository Memory
+# Repository Memory  
 
-這份檔案是從 `daily/*.md` 蒸餾出來的長期 memory。
+## Stable Context  
+- **資訊完整性是前提**：所有 Issue 必須在建立時提供清晰的目標、需求說明與預期成果，否則龍蝦無法判斷進度或產出決策。  
+- **指派與標籤規範**：每個 Issue 應指派負責人並加上適當的標籤（如 `needs‑info`、`in‑progress`），以降低追蹤成本並提升跨 Issue 的可見性。  
+- **溝通渠道**：需求說明、討論與決策應保留於 GitHub Issue / comment，或以可追溯的外部訊息（如 Telegram）作為附件引用。  
+- **龍蝦角色**：  
+  1. **資訊蒐集者**：每日掃描所有 Issue，將可見資訊蒸餾成長期記憶。  
+  2. **缺口提醒者**：發現資訊缺口時即時提醒主人補足。  
+  3. **規則執行者**：依照手動筆記中的「穩定規則」與「repo 習慣」檢查每筆資料的完整性。  
+- **手動筆記的地位**：`shared/manual.md` 只保存長期規則、決策與限制，永遠不會被自動覆寫；所有自動化的記憶整理皆以此為參考基礎。  
 
-尚未建立整理後的長期 context。
-
-請先產生 daily snapshots，再整理成這份 MEMORY.md：
-
-- 觸發 `.github/workflows/compact-memory.yml`
-- 執行 `node .github/scripts/memory/compact-memory.mjs`
-- 執行 `node .github/scripts/memory/summarize-memory-context.mjs --memory-dir .memory --output .memory/MEMORY.md`
+## Recent Themes  
+| 主題 | 觀察次數 (2026‑03‑24 ~ 2026‑03‑30) | 重點說明 |
+|------|-----------------------------------|----------|
+| **資訊缺口** | 7 天皆出現 | Issue #1 只有標題、空白內容，缺乏需求說明、對話紀錄或標籤。 |
+| **等待主人回覆** | 7 天皆出現 | 所有可觀測任務皆處於「等待主人提供具體需求」的狀態。 |
+| **缺乏指派/標籤** | 7 天皆出現 | 沒有任何負責人或標籤被設定，導致後續追蹤成本上升。 |
+| **角色與目標不
