@@ -1,17 +1,11 @@
 # Repository Memory
 
-## Stable Context
-- **每日巡檢機制**：一群龍蝦會在每個工作日自動檢視 repo 中的所有 open issue，產生 daily snapshot，並將觀測結果彙整成「資訊缺口」與「等待回應」等高層次概念。  
-- **Issue 必備要素**（從多日觀測推斷的隱性規則）  
-  1. **完整標題 + 內容說明**：僅有標題且內容空白的 issue 被視為「資訊不明」且無法推進。  
-  2. **指派負責人**：若未指定 assignee，後續追蹤成本會提升。  
-  3. **標籤 (Label)**：缺少標籤會使跨 issue 的關聯性難以辨識。  
-- **決策前置條件**：任何決策、里程碑或資源分配必須在 owner 提供具體需求、目標與預期成果之後才能產生。  
-- **資訊來源原則**：GitHub Issue / Comment 為唯一可信原始資料；手動筆記 (`shared/manual.md`) 只作為長期規則與限制的存放，不會被自動覆寫。  
+這份檔案是從 `daily/*.md` 蒸餾出來的長期 memory。
 
-> **不確定性**：目前尚未得知 repo 的實際業務領域、長期目標或 owner 的偏好，故上述規則僅基於「缺乏資訊」的重複觀測而抽象化。
+尚未建立整理後的長期 context。
 
-## Recent Themes
-| 主題 | 觀測頻率 (過去 7 天) | 具體描述 |
-|------|-------------------|----------|
-| 資訊缺口 | 每日皆出現 | Issue #1 只有標題，內容全空，導致無法判斷進度、阻礙
+請先產生 daily snapshots，再整理成這份 MEMORY.md：
+
+- 觸發 `.github/workflows/compact-memory.yml`
+- 執行 `node .github/scripts/memory/compact-memory.mjs`
+- 執行 `node .github/scripts/memory/summarize-memory-context.mjs --memory-dir .memory --output .memory/MEMORY.md`
